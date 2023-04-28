@@ -23,4 +23,9 @@ class Card extends Model
     {
         return $this->hasMany(Action::class);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

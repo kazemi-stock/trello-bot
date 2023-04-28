@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('type', 155)->charset('utf8mb4_general_ci');
             $table->longText('data')->nullable()->charset('utf8mb4_general_ci');
             $table->dateTime('date')->default('CURRENT_TIMESTAMP');
-            $table->date('sent_at')->nullable();
             $table->foreign('card_id')->references('id')->on('cards');
             $table->timestamps();
         });

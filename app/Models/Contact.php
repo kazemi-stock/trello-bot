@@ -25,4 +25,9 @@ class Contact extends Model
     {
         return $this->hasMany(Message::class);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
