@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-            $table->string('t_board_id', 155)->nullable()->comment('Trello Board ID');
-            $table->string('t_card_id', 155)->nullable()->comment('Trello Card ID');
-            $table->string('name', 155)->nullable()->charset('utf8mb4_general_ci');
-            $table->longText('desc')->nullable()->charset('utf8mb4_general_ci');
+            $table->string('board_id')->nullable();
+            $table->string('card_id')->nullable();
             $table->timestamps();
         });
     }

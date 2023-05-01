@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('contact_id')->nullable();
-            $table->string('from', 191)->nullable()->charset('utf8mb4_general_ci');
-            $table->string('to', 191)->nullable()->charset('utf8mb4_general_ci');
-            $table->longText('body')->nullable()->charset('utf8mb4_general_ci');
+            $table->string('name')->nullable();
+            $table->string('from')->nullable();
+            $table->string('to')->nullable();
+            $table->longText('body')->nullable();
+            $table->string('card_id')->nullable();
+            $table->foreign('card_id')->references('id')->on('cards');
             $table->enum('type', ['card', 'comment'])->default('card');
-            $table->foreign('contact_id')->references('id')->on('contacts');
             $table->timestamps();
         });
     }

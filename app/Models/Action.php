@@ -9,7 +9,7 @@ class Action extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['card_id', 't_action_id', 'type', 'data', 'date'];
+    protected $fillable = ['id', 'card_id', 't_action_id', 'type', 'data', 'date'];
 
     protected $hidden = ['created_at', 'updated_at'];
 
